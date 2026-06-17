@@ -1,229 +1,261 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>AS Choco Bites | Handcrafted Chocolates, Hyderabad</title>
-  <meta name="description" content="Handcrafted chocolates made with love in Hyderabad. Custom orders for birthdays, weddings, and all occasions. Order on WhatsApp." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <meta name="description" content="Handcrafted chocolates starting from just Rs.60. Custom boxes for birthdays, weddings, and gifting. Order on WhatsApp. Hyderabad."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <style>
-    :root {
-      --cocoa:      #2C1810;
-      --cocoa-deep: #1A0F0A;
-      --cream:      #FDF6EC;
-      --cream-warm: #F7EDD8;
-      --gold:       #C8963E;
-      --gold-light: #E8B86D;
-      --blush:      #F2D5C0;
-      --text-muted: #7A5C48;
-      --font-display: 'Cormorant Garamond', Georgia, serif;
-      --font-body:    'DM Sans', system-ui, sans-serif;
+    :root{
+      --cocoa:#2C1810;--deep:#1A0F0A;--cream:#FDF6EC;--warm:#F7EDD8;
+      --gold:#C8963E;--gold-l:#E8B86D;--blush:#F2D5C0;--muted:#7A5C48;
+      --fd:'Cormorant Garamond',Georgia,serif;--fb:'DM Sans',system-ui,sans-serif;
     }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-    body { font-family: var(--font-body); background: var(--cream); color: var(--cocoa); line-height: 1.6; overflow-x: hidden; }
-    img { display: block; max-width: 100%; }
-    a { color: inherit; text-decoration: none; }
-    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
-    :focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+    body{font-family:var(--fb);background:var(--cream);color:var(--cocoa);line-height:1.6;overflow-x:hidden}
+    img{display:block;max-width:100%}
+    a{color:inherit;text-decoration:none}
+    button{cursor:pointer;font:inherit}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+    :focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 
     /* NAV */
-    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; transition: background 0.4s, box-shadow 0.4s; padding: 1.25rem 0; }
-    .nav.scrolled { background: rgba(253,246,236,0.96); backdrop-filter: blur(10px); box-shadow: 0 1px 0 rgba(44,24,16,0.08); }
-    .nav__inner { max-width: 1120px; margin: 0 auto; padding: 0 1.5rem; display: flex; align-items: center; justify-content: space-between; }
-    .nav__logo { font-family: var(--font-display); font-size: 1.4rem; font-weight: 500; color: var(--cream); transition: color 0.4s; }
-    .nav.scrolled .nav__logo { color: var(--cocoa); }
-    .nav__cta { display: inline-flex; align-items: center; gap: 0.45rem; background: #25D366; color: #fff; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.05em; padding: 0.6rem 1.25rem; border-radius: 100px; transition: background 0.2s, transform 0.2s; }
-    .nav__cta:hover { background: #1da851; transform: translateY(-1px); }
-    .nav__cta svg { width: 15px; height: 15px; }
+    .nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.25rem 0;transition:background .4s,box-shadow .4s}
+    .nav.sc{background:rgba(253,246,236,.96);backdrop-filter:blur(10px);box-shadow:0 1px 0 rgba(44,24,16,.08)}
+    .nav-in{max-width:1120px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between}
+    .logo{font-family:var(--fd);font-size:1.4rem;font-weight:500;color:var(--cream);transition:color .4s;cursor:pointer}
+    .nav.sc .logo{color:var(--cocoa)}
+    .nav-wa{display:inline-flex;align-items:center;gap:.45rem;background:#25D366;color:#fff;font-size:.8rem;font-weight:600;letter-spacing:.05em;padding:.6rem 1.25rem;border-radius:100px;border:none;transition:background .2s,transform .2s;cursor:pointer;text-decoration:none}
+    .nav-wa:hover{background:#1da851;transform:translateY(-1px)}
+    .nav-wa svg{width:15px;height:15px}
 
     /* HERO */
-    .hero { position: relative; min-height: 100svh; display: flex; align-items: flex-end; padding-bottom: 5rem; overflow: hidden; background: var(--cocoa-deep); }
-    .hero__bg { position: absolute; inset: 0; background: radial-gradient(ellipse 70% 90% at 75% 35%, #4a2515 0%, transparent 60%), radial-gradient(ellipse 90% 60% at 15% 75%, #3a1c0e 0%, transparent 55%), linear-gradient(155deg, #1A0F0A 0%, #2C1810 45%, #3d2015 75%, #1A0F0A 100%); }
-    .hero__orbs { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
-    .orb { position: absolute; border-radius: 50%; background: rgba(200,150,62,0.05); border: 1px solid rgba(200,150,62,0.1); animation: orb-float linear infinite; }
-    .orb:nth-child(1) { width: 380px; height: 380px; top: -100px; right: -80px; animation-duration: 28s; }
-    .orb:nth-child(2) { width: 200px; height: 200px; top: 35%; left: -50px; animation-duration: 20s; animation-delay: -9s; }
-    .orb:nth-child(3) { width: 260px; height: 260px; bottom: 8%; right: 12%; animation-duration: 24s; animation-delay: -15s; }
-    @keyframes orb-float { 0%,100%{transform:translateY(0) rotate(0deg)} 33%{transform:translateY(-20px) rotate(2deg)} 66%{transform:translateY(10px) rotate(-1deg)} }
-    .hero__content { position: relative; z-index: 2; max-width: 1120px; margin: 0 auto; padding: 0 1.5rem; width: 100%; }
-    .hero__inner { max-width: 700px; }
-    .hero__eyebrow { color: var(--gold-light); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.75rem; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; }
-    .hero__eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--gold-light); }
-    .hero__title { font-family: var(--font-display); font-size: clamp(3.5rem, 11vw, 8rem); font-weight: 300; line-height: 1.05; color: var(--cream); margin-bottom: 1.5rem; font-style: italic; }
-    .hero__title em { font-style: normal; display: block; font-size: 0.36em; letter-spacing: 0.09em; color: var(--gold-light); font-family: var(--font-body); font-weight: 300; margin-top: 0.4em; }
-    .hero__sub { font-size: 1.05rem; color: rgba(253,246,236,0.7); font-weight: 300; max-width: 430px; margin-bottom: 2.5rem; line-height: 1.75; }
-    .hero__btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;padding-bottom:5rem;overflow:hidden;background:var(--deep)}
+    .hbg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 90% at 75% 35%,#4a2515 0%,transparent 60%),radial-gradient(ellipse 90% 60% at 15% 75%,#3a1c0e 0%,transparent 55%),linear-gradient(155deg,#1A0F0A 0%,#2C1810 45%,#3d2015 75%,#1A0F0A 100%)}
+    .horbs{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+    .orb{position:absolute;border-radius:50%;background:rgba(200,150,62,.05);border:1px solid rgba(200,150,62,.1);animation:ofloat linear infinite}
+    .orb:nth-child(1){width:380px;height:380px;top:-100px;right:-80px;animation-duration:28s}
+    .orb:nth-child(2){width:200px;height:200px;top:35%;left:-50px;animation-duration:20s;animation-delay:-9s}
+    .orb:nth-child(3){width:260px;height:260px;bottom:8%;right:12%;animation-duration:24s;animation-delay:-15s}
+    @keyframes ofloat{0%,100%{transform:translateY(0) rotate(0deg)}33%{transform:translateY(-20px) rotate(2deg)}66%{transform:translateY(10px) rotate(-1deg)}}
+    .hc{position:relative;z-index:2;max-width:1120px;margin:0 auto;padding:0 1.5rem;width:100%}
+    .hi{max-width:700px}
+    .eyebrow{color:var(--gold-l);margin-bottom:1.25rem;display:flex;align-items:center;gap:.75rem;font-size:.7rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase}
+    .eyebrow::before{content:'';display:block;width:32px;height:1px;background:var(--gold-l)}
+    h1.hero-title{font-family:var(--fd);font-size:clamp(3.2rem,11vw,7.5rem);font-weight:300;line-height:1.05;color:var(--cream);margin-bottom:1.5rem;font-style:italic}
+    h1.hero-title em{font-style:normal;display:block;font-size:.37em;letter-spacing:.09em;color:var(--gold-l);font-family:var(--fb);font-weight:300;margin-top:.4em}
+    .hero-sub{font-size:1.05rem;color:rgba(253,246,236,.7);font-weight:300;max-width:430px;margin-bottom:2.5rem;line-height:1.75}
+    .hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+
+    /* PRICE BADGE */
+    .price-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(200,150,62,.15);border:1px solid rgba(200,150,62,.3);color:var(--gold-l);font-size:.78rem;font-weight:600;padding:.4rem 1rem;border-radius:100px;margin-bottom:1.5rem;letter-spacing:.03em}
 
     /* BUTTONS */
-    .btn { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--font-body); font-weight: 500; font-size: 0.875rem; border-radius: 100px; transition: all 0.25s; padding: 0.9rem 2rem; white-space: nowrap; cursor: pointer; border: none; }
-    .btn svg { width: 18px; height: 18px; flex-shrink: 0; }
-    .btn--wa { background: #25D366; color: #fff; box-shadow: 0 4px 20px rgba(37,211,102,0.3); animation: wa-pulse 2.8s ease-in-out infinite; }
-    .btn--wa:hover { background: #1da851; animation: none; transform: translateY(-2px); box-shadow: 0 6px 28px rgba(37,211,102,0.45); }
-    @keyframes wa-pulse { 0%,100%{box-shadow:0 4px 20px rgba(37,211,102,0.3)} 50%{box-shadow:0 4px 36px rgba(37,211,102,0.58)} }
-    .btn--ghost { border: 1.5px solid rgba(253,246,236,0.3); color: var(--cream); background: transparent; }
-    .btn--ghost:hover { border-color: var(--gold-light); color: var(--gold-light); }
-    .btn--gold { background: var(--gold); color: #fff; box-shadow: 0 4px 20px rgba(200,150,62,0.35); }
-    .btn--gold:hover { background: #b07830; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(200,150,62,0.45); }
-    .btn--dark { background: var(--cocoa); color: #fff; }
-    .btn--dark:hover { background: #1A0F0A; transform: translateY(-1px); }
+    .btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--fb);font-weight:500;font-size:.875rem;border-radius:100px;transition:all .25s;padding:.9rem 2rem;white-space:nowrap;cursor:pointer;border:none}
+    .btn svg{width:18px;height:18px;flex-shrink:0}
+    .btn-wa{background:#25D366;color:#fff;box-shadow:0 4px 20px rgba(37,211,102,.3);animation:wapulse 2.8s ease-in-out infinite;text-decoration:none}
+    .btn-wa:hover{background:#1da851;animation:none;transform:translateY(-2px);box-shadow:0 6px 28px rgba(37,211,102,.45)}
+    @keyframes wapulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.3)}50%{box-shadow:0 4px 36px rgba(37,211,102,.58)}}
+    .btn-ghost{border:1.5px solid rgba(253,246,236,.3);color:var(--cream);background:transparent;text-decoration:none}
+    .btn-ghost:hover{border-color:var(--gold-l);color:var(--gold-l)}
+    .btn-gold{background:var(--gold);color:#fff;box-shadow:0 4px 20px rgba(200,150,62,.35);text-decoration:none}
+    .btn-gold:hover{background:#b07830;transform:translateY(-2px)}
+    .btn-dark{background:var(--cocoa);color:#fff;border:none}
+    .btn-dark:hover{background:var(--deep)}
+    .btn-ig{background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);color:#fff;text-decoration:none}
+    .btn-ig:hover{opacity:.9;transform:translateY(-1px)}
 
     /* SCROLL HINT */
-    .scroll-hint { position: absolute; bottom: 2rem; right: 2.5rem; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; color: rgba(253,246,236,0.35); font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; }
-    .scroll-hint__bar { width: 1px; height: 44px; background: linear-gradient(to bottom, transparent, rgba(253,246,236,0.35)); animation: bar-drop 2s ease-in-out infinite; }
-    @keyframes bar-drop { 0%{transform:scaleY(0);transform-origin:top} 50%{transform:scaleY(1);transform-origin:top} 51%{transform-origin:bottom} 100%{transform:scaleY(0);transform-origin:bottom} }
+    .shint{position:absolute;bottom:2rem;right:2.5rem;display:flex;flex-direction:column;align-items:center;gap:.5rem;color:rgba(253,246,236,.3);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase}
+    .shint-bar{width:1px;height:44px;background:linear-gradient(to bottom,transparent,rgba(253,246,236,.35));animation:sbar 2s ease-in-out infinite}
+    @keyframes sbar{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
 
     /* MARQUEE */
-    .marquee { background: var(--cocoa); padding: 0.85rem 0; overflow: hidden; }
-    .marquee__track { display: flex; animation: marquee 30s linear infinite; }
-    .marquee__item { display: inline-flex; align-items: center; gap: 1rem; padding: 0 1.75rem; white-space: nowrap; color: rgba(253,246,236,0.75); font-size: 0.68rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; }
-    .marquee__item .dot { color: var(--gold-light); font-size: 0.9rem; }
-    @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+    .mq{background:var(--cocoa);padding:.85rem 0;overflow:hidden}
+    .mq-track{display:flex;animation:mq 30s linear infinite}
+    .mq-item{display:inline-flex;align-items:center;gap:1rem;padding:0 1.75rem;white-space:nowrap;color:rgba(253,246,236,.75);font-size:.68rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase}
+    .mq-item .dot{color:var(--gold-l);font-size:.9rem}
+    @keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-    /* SECTION WRAPPER */
-    .section { padding: 5.5rem 0; }
-    .container { max-width: 1120px; margin: 0 auto; padding: 0 1.5rem; }
-    .section-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 0.75rem; }
-    .section-title { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 300; line-height: 1.15; }
-    .section-sub { font-size: 0.95rem; color: var(--text-muted); line-height: 1.75; margin-top: 0.75rem; }
-    .section-header { text-align: center; margin-bottom: 3.5rem; }
+    /* LAYOUT */
+    .sec{padding:5.5rem 0}
+    .con{max-width:1120px;margin:0 auto;padding:0 1.5rem}
+    .sec-lbl{font-size:.68rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;margin-bottom:.75rem}
+    .sec-title{font-family:var(--fd);font-size:clamp(2rem,5vw,3.5rem);font-weight:300;line-height:1.15}
+    .sec-sub{font-size:.95rem;color:var(--muted);line-height:1.75;margin-top:.75rem}
+    .sec-hdr{text-align:center;margin-bottom:3.5rem}
 
     /* ABOUT */
-    .about { background: var(--cream); }
-    .about__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
-    .about__visual { position: relative; }
-    .about__card { border-radius: 16px; overflow: hidden; aspect-ratio: 4/5; background: linear-gradient(145deg, #2C1810, #4a2515); display: flex; align-items: center; justify-content: center; position: relative; }
-    .about__card::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(45deg, rgba(200,150,62,0.04) 0px, rgba(200,150,62,0.04) 1px, transparent 1px, transparent 24px); }
-    .about__card-emoji { font-size: 6rem; position: relative; z-index: 1; filter: drop-shadow(0 8px 24px rgba(0,0,0,0.5)); }
-    .about__badge { position: absolute; bottom: -1.5rem; right: -1.5rem; width: 108px; height: 108px; background: var(--gold); border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: #fff; box-shadow: 0 8px 24px rgba(200,150,62,0.4); z-index: 2; }
-    .about__badge-num { font-family: var(--font-display); font-size: 2.1rem; font-weight: 600; line-height: 1; }
-    .about__badge-text { font-size: 0.58rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.9; }
-    .about .section-label { color: var(--gold); }
-    .about .section-title { color: var(--cocoa); margin-bottom: 1.25rem; }
-    .about__body { color: var(--text-muted); font-size: 0.97rem; line-height: 1.8; margin-bottom: 1rem; }
-    .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2rem; }
-    .pillar { padding: 1.25rem 1rem; background: var(--cream-warm); border-radius: 12px; text-align: center; border: 1px solid rgba(200,150,62,0.12); }
-    .pillar__icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
-    .pillar h4 { font-family: var(--font-display); font-size: 0.92rem; font-weight: 500; color: var(--cocoa); margin-bottom: 0.2rem; }
-    .pillar p { font-size: 0.72rem; color: var(--text-muted); }
+    .about{background:var(--cream)}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+    .about-vis{position:relative}
+    .about-card{border-radius:16px;overflow:hidden;aspect-ratio:4/5;background:linear-gradient(145deg,#2C1810,#4a2515);display:flex;align-items:center;justify-content:center;position:relative}
+    .about-card::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,rgba(200,150,62,.04) 0px,rgba(200,150,62,.04) 1px,transparent 1px,transparent 24px)}
+    .about-emoji{font-size:6rem;position:relative;z-index:1;filter:drop-shadow(0 8px 24px rgba(0,0,0,.5))}
+    .about-badge{position:absolute;bottom:-1.5rem;right:-1.5rem;width:108px;height:108px;background:var(--gold);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#fff;box-shadow:0 8px 24px rgba(200,150,62,.4);z-index:2}
+    .about-badge-num{font-family:var(--fd);font-size:2.1rem;font-weight:600;line-height:1}
+    .about-badge-txt{font-size:.58rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;opacity:.9}
+    .about-body{color:var(--muted);font-size:.97rem;line-height:1.8;margin-bottom:1rem}
+    .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem}
+    .pillar{padding:1.25rem 1rem;background:var(--warm);border-radius:12px;text-align:center;border:1px solid rgba(200,150,62,.12)}
+    .pillar-icon{font-size:1.5rem;margin-bottom:.5rem}
+    .pillar h4{font-family:var(--fd);font-size:.92rem;font-weight:500;color:var(--cocoa);margin-bottom:.2rem}
+    .pillar p{font-size:.72rem;color:var(--muted)}
 
-    /* INSTAGRAM GALLERY */
-    .gallery { background: var(--cocoa-deep); }
-    .gallery .section-label { color: var(--gold-light); }
-    .gallery .section-title { color: var(--cream); }
-    .gallery .section-sub { color: rgba(253,246,236,0.55); }
-    .gallery__loading { text-align: center; padding: 4rem 0; color: rgba(253,246,236,0.5); }
-    .gallery__spinner { width: 40px; height: 40px; border: 2px solid rgba(200,150,62,0.2); border-top-color: var(--gold); border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 1rem; }
-    @keyframes spin { to { transform: rotate(360deg); } }
-    .gallery__error { text-align: center; padding: 3rem; background: rgba(253,246,236,0.04); border-radius: 16px; border: 1px dashed rgba(253,246,236,0.1); color: rgba(253,246,236,0.5); }
-    .gallery__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
-    .gallery__item { position: relative; border-radius: 12px; overflow: hidden; aspect-ratio: 1; cursor: pointer; background: rgba(253,246,236,0.05); }
-    .gallery__item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; display: block; }
-    .gallery__item:hover img { transform: scale(1.06); }
-    .gallery__overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(26,15,10,0.9) 0%, transparent 60%); opacity: 0; transition: opacity 0.3s; display: flex; flex-direction: column; justify-content: flex-end; padding: 1.25rem; }
-    .gallery__item:hover .gallery__overlay { opacity: 1; }
-    .gallery__caption { color: #fff; font-size: 0.78rem; line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-    .gallery__likes { color: var(--gold-light); font-size: 0.7rem; margin-top: 0.4rem; font-weight: 600; }
-    .gallery__cta { text-align: center; margin-top: 2.5rem; }
+    /* GALLERY - Real Instagram posts embedded */
+    .gallery{background:var(--deep)}
+    .gallery .sec-lbl{color:var(--gold-l)}
+    .gallery .sec-title{color:var(--cream)}
+    .gallery .sec-sub{color:rgba(253,246,236,.55)}
+    .posts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+    .post-card{border-radius:14px;overflow:hidden;background:rgba(253,246,236,.04);border:1px solid rgba(253,246,236,.08);transition:transform .3s,border-color .3s;cursor:pointer;display:flex;flex-direction:column}
+    .post-card:hover{transform:translateY(-4px);border-color:rgba(200,150,62,.35)}
+    .post-thumb{position:relative;aspect-ratio:1;overflow:hidden;background:linear-gradient(145deg,#2c1810,#4a2515)}
+    .post-thumb iframe{width:100%;height:100%;border:none;pointer-events:none;transform:scale(1.02)}
+    /* Overlay to make whole card clickable */
+    .post-thumb-overlay{position:absolute;inset:0;z-index:2}
+    .post-emoji-fallback{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;z-index:1}
+    .post-emoji-fallback span.big{font-size:3rem;filter:drop-shadow(0 4px 12px rgba(0,0,0,.5))}
+    .post-body{padding:1.1rem 1.25rem;flex:1;display:flex;flex-direction:column;gap:.5rem}
+    .post-caption{font-size:.8rem;color:rgba(253,246,236,.7);line-height:1.55;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;flex:1}
+    .post-meta{display:flex;align-items:center;justify-content:space-between}
+    .post-likes{font-size:.7rem;color:var(--gold-l);font-weight:600}
+    .post-date{font-size:.65rem;color:rgba(253,246,236,.35)}
+    .post-cta-row{text-align:center;margin-top:2.5rem}
 
     /* LIGHTBOX */
-    .lightbox { display: none; position: fixed; inset: 0; z-index: 500; background: rgba(26,15,10,0.95); backdrop-filter: blur(8px); align-items: center; justify-content: center; padding: 1rem; }
-    .lightbox.open { display: flex; }
-    .lightbox__inner { position: relative; max-width: 600px; width: 100%; }
-    .lightbox__img { width: 100%; border-radius: 16px; max-height: 85vh; object-fit: contain; }
-    .lightbox__close { position: absolute; top: -2.5rem; right: 0; background: none; border: none; color: #fff; font-size: 2rem; cursor: pointer; opacity: 0.7; transition: opacity 0.2s; line-height: 1; }
-    .lightbox__close:hover { opacity: 1; }
-    .lightbox__caption { color: rgba(253,246,236,0.75); font-size: 0.85rem; margin-top: 1rem; text-align: center; line-height: 1.6; }
-    .lightbox__nav { display: flex; justify-content: center; gap: 1rem; margin-top: 1.25rem; }
+    .lb{display:none;position:fixed;inset:0;z-index:500;background:rgba(26,15,10,.95);backdrop-filter:blur(10px);align-items:center;justify-content:center;padding:1rem}
+    .lb.open{display:flex}
+    .lb-inner{position:relative;max-width:520px;width:100%;text-align:center}
+    .lb-close{position:absolute;top:-2.5rem;right:0;background:none;border:none;color:#fff;font-size:2.2rem;cursor:pointer;opacity:.7;line-height:1}
+    .lb-close:hover{opacity:1}
+    .lb-embed{width:100%;border-radius:12px;overflow:hidden;background:#1a0f0a;aspect-ratio:1}
+    .lb-embed iframe{width:100%;height:100%;border:none}
+    .lb-caption{color:rgba(253,246,236,.7);font-size:.85rem;margin-top:1rem;line-height:1.6;max-height:80px;overflow:hidden}
+    .lb-nav{display:flex;gap:.75rem;justify-content:center;margin-top:1.25rem}
+    .lb-order{display:flex;justify-content:center;margin-top:.75rem}
+
+    /* STORY / FEATURED REVIEW */
+    .story{background:var(--cocoa)}
+    .story-inner{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+    .story-quote{position:relative;padding:2.5rem;background:rgba(253,246,236,.05);border-radius:16px;border:1px solid rgba(200,150,62,.2)}
+    .story-quote::before{content:'\201C';font-family:var(--fd);font-size:6rem;color:var(--gold);opacity:.25;position:absolute;top:.5rem;left:1.5rem;line-height:1}
+    .story-text{font-family:var(--fd);font-size:1.25rem;color:var(--cream);line-height:1.7;position:relative;z-index:1;font-style:italic;font-weight:300}
+    .story-attr{margin-top:1.5rem;color:var(--gold-l);font-size:.8rem;font-weight:600;letter-spacing:.08em}
+    .story-right .sec-lbl{color:var(--gold-l)}
+    .story-right .sec-title{color:var(--cream);margin-bottom:1.25rem}
+    .story-right p{color:rgba(253,246,236,.6);font-size:.95rem;line-height:1.8;margin-bottom:1rem}
+    .story-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem}
+    .stat{text-align:center;padding:1.25rem;background:rgba(253,246,236,.05);border-radius:12px;border:1px solid rgba(200,150,62,.15)}
+    .stat-num{font-family:var(--fd);font-size:2rem;font-weight:500;color:var(--gold-l);line-height:1}
+    .stat-lbl{font-size:.7rem;color:rgba(253,246,236,.5);letter-spacing:.08em;text-transform:uppercase;margin-top:.3rem}
 
     /* OCCASIONS */
-    .occasions { background: var(--cream-warm); }
-    .occasions .section-label { color: var(--gold); }
-    .occasions .section-title { color: var(--cocoa); }
-    .occasions__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
-    .occasion { display: flex; align-items: center; gap: 1.25rem; padding: 1.5rem; background: var(--cream); border-radius: 14px; border: 1.5px solid transparent; transition: border-color 0.25s, box-shadow 0.25s; }
-    .occasion:hover { border-color: var(--gold); box-shadow: 0 4px 20px rgba(200,150,62,0.1); }
-    .occasion__icon { width: 54px; height: 54px; border-radius: 50%; background: var(--blush); display: flex; align-items: center; justify-content: center; font-size: 1.6rem; flex-shrink: 0; }
-    .occasion h3 { font-family: var(--font-display); font-size: 1.1rem; color: var(--cocoa); margin-bottom: 0.2rem; }
-    .occasion p { font-size: 0.78rem; color: var(--text-muted); line-height: 1.55; }
+    .occasions{background:var(--warm)}
+    .occasions .sec-lbl{color:var(--gold)}
+    .occasions .sec-title{color:var(--cocoa)}
+    .occ-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+    .occ{display:flex;align-items:center;gap:1.25rem;padding:1.5rem;background:var(--cream);border-radius:14px;border:1.5px solid transparent;transition:border-color .25s,box-shadow .25s}
+    .occ:hover{border-color:var(--gold);box-shadow:0 4px 20px rgba(200,150,62,.1)}
+    .occ-icon{width:54px;height:54px;border-radius:50%;background:var(--blush);display:flex;align-items:center;justify-content:center;font-size:1.6rem;flex-shrink:0}
+    .occ h3{font-family:var(--fd);font-size:1.1rem;color:var(--cocoa);margin-bottom:.2rem}
+    .occ p{font-size:.78rem;color:var(--muted);line-height:1.55}
 
-    /* HOW TO ORDER */
-    .how { background: var(--cocoa); }
-    .how .section-label { color: var(--gold-light); }
-    .how .section-title { color: var(--cream); }
-    .how .section-sub { color: rgba(253,246,236,0.55); }
-    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; position: relative; margin-top: 1rem; }
-    .steps::before { content: ''; position: absolute; top: 1.5rem; left: 12%; right: 12%; height: 1px; background: linear-gradient(to right, transparent, rgba(200,150,62,0.25), transparent); }
-    .step { text-align: center; }
-    .step__num { width: 48px; height: 48px; border-radius: 50%; background: var(--gold); color: #fff; font-family: var(--font-display); font-size: 1.25rem; font-weight: 500; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem; }
-    .step h3 { font-family: var(--font-display); font-size: 1.1rem; color: var(--cream); margin-bottom: 0.4rem; }
-    .step p { font-size: 0.8rem; color: rgba(253,246,236,0.5); line-height: 1.65; }
-    .how__cta { text-align: center; margin-top: 3.5rem; }
+    /* PRODUCTS */
+    .products{background:var(--cream)}
+    .products .sec-lbl{color:var(--gold)}
+    .products .sec-title{color:var(--cocoa)}
+    .prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+    .prod-card{background:var(--warm);border-radius:14px;overflow:hidden;border:1.5px solid rgba(200,150,62,.12);transition:box-shadow .3s,transform .3s}
+    .prod-card:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(200,150,62,.15)}
+    .prod-vis{aspect-ratio:4/3;background:linear-gradient(145deg,#2C1810,#4a2515);display:flex;align-items:center;justify-content:center;font-size:3.5rem}
+    .prod-body{padding:1.25rem}
+    .prod-tag{font-size:.62rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem}
+    .prod-name{font-family:var(--fd);font-size:1.15rem;color:var(--cocoa);margin-bottom:.4rem}
+    .prod-desc{font-size:.78rem;color:var(--muted);line-height:1.6;margin-bottom:.75rem}
+    .prod-price{font-family:var(--fd);font-size:1.1rem;font-weight:500;color:var(--cocoa)}
+    .prod-price small{font-size:.7rem;color:var(--muted);font-family:var(--fb)}
+
+    /* HOW */
+    .how{background:var(--cocoa)}
+    .how .sec-lbl{color:var(--gold-l)}
+    .how .sec-title{color:var(--cream)}
+    .how .sec-sub{color:rgba(253,246,236,.55)}
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;position:relative}
+    .steps::before{content:'';position:absolute;top:1.5rem;left:12%;right:12%;height:1px;background:linear-gradient(to right,transparent,rgba(200,150,62,.25),transparent)}
+    .step{text-align:center}
+    .step-num{width:48px;height:48px;border-radius:50%;background:var(--gold);color:#fff;font-family:var(--fd);font-size:1.25rem;font-weight:500;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem}
+    .step h3{font-family:var(--fd);font-size:1.1rem;color:var(--cream);margin-bottom:.4rem}
+    .step p{font-size:.8rem;color:rgba(253,246,236,.5);line-height:1.65}
 
     /* TESTIMONIALS */
-    .testimonials { background: var(--cream); }
-    .testimonials .section-label { color: var(--gold); }
-    .testimonials .section-title { color: var(--cocoa); }
-    .testimonials__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
-    .testimonial { background: var(--cream-warm); border-radius: 14px; padding: 2rem 1.75rem; position: relative; }
-    .testimonial::before { content: '\201C'; position: absolute; top: 0.75rem; left: 1.5rem; font-family: var(--font-display); font-size: 4.5rem; color: var(--gold); opacity: 0.2; line-height: 1; }
-    .testimonial__stars { color: var(--gold); font-size: 0.85rem; margin-bottom: 0.75rem; }
-    .testimonial__text { font-size: 0.88rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 1.25rem; position: relative; z-index: 1; }
-    .testimonial__name { font-family: var(--font-display); font-size: 1rem; color: var(--cocoa); font-weight: 500; }
-    .testimonial__loc { font-size: 0.72rem; color: var(--text-muted); }
+    .testi{background:var(--cream)}
+    .testi .sec-lbl{color:var(--gold)}
+    .testi .sec-title{color:var(--cocoa)}
+    .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+    .tcard{background:var(--warm);border-radius:14px;padding:2rem 1.75rem;position:relative}
+    .tcard::before{content:'\201C';position:absolute;top:.75rem;left:1.5rem;font-family:var(--fd);font-size:4.5rem;color:var(--gold);opacity:.2;line-height:1}
+    .tcard-stars{color:var(--gold);font-size:.85rem;margin-bottom:.75rem}
+    .tcard-text{font-size:.88rem;color:var(--muted);line-height:1.8;margin-bottom:1.25rem;position:relative;z-index:1}
+    .tcard-name{font-family:var(--fd);font-size:1rem;color:var(--cocoa);font-weight:500}
+    .tcard-loc{font-size:.72rem;color:var(--muted)}
 
-    /* CTA BANNER */
-    .cta-banner { background: var(--cocoa-deep); text-align: center; position: relative; overflow: hidden; }
-    .cta-banner::before { content: ''; position: absolute; top: -50%; left: 50%; transform: translateX(-50%); width: 700px; height: 700px; border-radius: 50%; background: radial-gradient(circle, rgba(200,150,62,0.07) 0%, transparent 70%); pointer-events: none; }
-    .cta-banner__inner { position: relative; z-index: 1; }
-    .cta-banner .section-label { color: var(--gold-light); }
-    .cta-banner__title { font-family: var(--font-display); font-size: clamp(2.5rem, 7vw, 5rem); font-weight: 300; font-style: italic; color: var(--cream); line-height: 1.1; margin-bottom: 1rem; }
-    .cta-banner__sub { color: rgba(253,246,236,0.55); max-width: 420px; margin: 0 auto 2.5rem; font-size: 0.97rem; line-height: 1.75; }
-    .cta-banner__btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-    .cta-banner__details { margin-top: 3rem; display: flex; gap: 2.5rem; justify-content: center; flex-wrap: wrap; }
-    .cta-banner__detail { display: flex; align-items: center; gap: 0.5rem; color: rgba(253,246,236,0.4); font-size: 0.82rem; }
-    .cta-banner__detail span { color: var(--gold-light); }
+    /* CTA */
+    .cta{background:var(--deep);text-align:center;position:relative;overflow:hidden}
+    .cta::before{content:'';position:absolute;top:-50%;left:50%;transform:translateX(-50%);width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(200,150,62,.07) 0%,transparent 70%);pointer-events:none}
+    .cta-inner{position:relative;z-index:1}
+    .cta .sec-lbl{color:var(--gold-l)}
+    .cta-title{font-family:var(--fd);font-size:clamp(2.5rem,7vw,5rem);font-weight:300;font-style:italic;color:var(--cream);line-height:1.1;margin-bottom:1rem}
+    .cta-sub{color:rgba(253,246,236,.55);max-width:420px;margin:0 auto 2.5rem;font-size:.97rem;line-height:1.75}
+    .cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+    .cta-details{margin-top:3rem;display:flex;gap:2.5rem;justify-content:center;flex-wrap:wrap}
+    .cta-detail{display:flex;align-items:center;gap:.5rem;color:rgba(253,246,236,.4);font-size:.82rem}
+    .cta-detail em{color:var(--gold-l);font-style:normal}
 
     /* FOOTER */
-    .footer { background: #0e0705; padding: 2.5rem 0; text-align: center; }
-    .footer__logo { font-family: var(--font-display); font-size: 1.6rem; color: var(--cream); opacity: 0.85; margin-bottom: 0.75rem; }
-    .footer__links { display: flex; gap: 2rem; justify-content: center; margin: 1rem 0; flex-wrap: wrap; }
-    .footer__links a { color: rgba(253,246,236,0.35); font-size: 0.8rem; transition: color 0.2s; }
-    .footer__links a:hover { color: var(--gold-light); }
-    .footer__copy { color: rgba(253,246,236,0.25); font-size: 0.72rem; }
+    .footer{background:#0e0705;padding:2.5rem 0;text-align:center}
+    .footer-logo{font-family:var(--fd);font-size:1.6rem;color:var(--cream);opacity:.85;margin-bottom:.75rem}
+    .footer-links{display:flex;gap:2rem;justify-content:center;margin:1rem 0;flex-wrap:wrap}
+    .footer-links a{color:rgba(253,246,236,.35);font-size:.8rem;transition:color .2s;cursor:pointer}
+    .footer-links a:hover{color:var(--gold-l)}
+    .footer-copy{color:rgba(253,246,236,.25);font-size:.72rem}
 
     /* FLOAT WA */
-    .wa-float { position: fixed; bottom: 1.75rem; right: 1.75rem; z-index: 200; width: 58px; height: 58px; border-radius: 50%; background: #25D366; color: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(37,211,102,0.45); transition: transform 0.2s; animation: wa-pulse 2.8s ease-in-out infinite; }
-    .wa-float:hover { transform: scale(1.1); animation: none; }
-    .wa-float svg { width: 28px; height: 28px; }
+    .wa-float{position:fixed;bottom:1.75rem;right:1.75rem;z-index:200;width:58px;height:58px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.45);transition:transform .2s;animation:wapulse 2.8s ease-in-out infinite;text-decoration:none}
+    .wa-float:hover{transform:scale(1.1);animation:none}
+    .wa-float svg{width:28px;height:28px}
 
     /* REVEAL */
-    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
-    .reveal.visible { opacity: 1; transform: none; }
-    .d1 { transition-delay: 0.1s; } .d2 { transition-delay: 0.2s; } .d3 { transition-delay: 0.3s; } .d4 { transition-delay: 0.4s; }
+    .rv{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+    .rv.vis{opacity:1;transform:none}
+    .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
 
     /* MOBILE */
-    @media (max-width: 900px) {
-      .about__grid { grid-template-columns: 1fr; gap: 3rem; }
-      .about__badge { right: 0.5rem; bottom: -1rem; width: 88px; height: 88px; }
-      .pillars { grid-template-columns: repeat(3,1fr); }
-      .gallery__grid { grid-template-columns: repeat(2,1fr); }
-      .steps { grid-template-columns: repeat(2,1fr); }
-      .steps::before { display: none; }
-      .testimonials__grid { grid-template-columns: 1fr; }
-      .occasions__grid { grid-template-columns: 1fr; }
+    @media(max-width:900px){
+      .about-grid{grid-template-columns:1fr;gap:3rem}
+      .about-badge{right:.5rem;bottom:-1rem;width:88px;height:88px}
+      .pillars{grid-template-columns:repeat(3,1fr)}
+      .posts-grid{grid-template-columns:repeat(2,1fr)}
+      .steps{grid-template-columns:repeat(2,1fr)}
+      .steps::before{display:none}
+      .testi-grid{grid-template-columns:1fr}
+      .occ-grid{grid-template-columns:1fr}
+      .prod-grid{grid-template-columns:repeat(2,1fr)}
+      .story-inner{grid-template-columns:1fr;gap:2.5rem}
     }
-    @media (max-width: 560px) {
-      .section { padding: 3.5rem 0; }
-      .hero { padding-bottom: 4rem; }
-      .gallery__grid { grid-template-columns: repeat(2,1fr); gap: 0.6rem; }
-      .pillars { grid-template-columns: 1fr; }
-      .steps { grid-template-columns: 1fr; }
-      .cta-banner__btns { flex-direction: column; align-items: center; }
-      .cta-banner__btns .btn { width: 100%; max-width: 320px; justify-content: center; }
-      .scroll-hint { display: none; }
+    @media(max-width:560px){
+      .sec{padding:3.5rem 0}
+      .posts-grid{grid-template-columns:1fr}
+      .pillars{grid-template-columns:1fr}
+      .steps{grid-template-columns:1fr}
+      .prod-grid{grid-template-columns:1fr}
+      .cta-btns{flex-direction:column;align-items:center}
+      .cta-btns .btn{width:100%;max-width:320px;justify-content:center}
+      .shint{display:none}
     }
   </style>
 </head>
@@ -231,9 +263,9 @@
 
 <!-- NAV -->
 <nav class="nav" id="nav">
-  <div class="nav__inner">
-    <a href="#home" onclick="event.preventDefault();window.scrollTo({top:0,behavior:'smooth'})" class="nav__logo">AS Choco Bites</a>
-    <a href="https://wa.me/919014186141?text=Hi!%20I%20saw%20your%20website%20and%20want%20to%20place%20an%20order%20%F0%9F%8D%AB" class="nav__cta" target="_blank" rel="noopener" id="wa-main">
+  <div class="nav-in">
+    <span class="logo" onclick="window.scrollTo({top:0,behavior:'smooth'})">AS Choco Bites</span>
+    <a href="https://wa.me/919014186141?text=Hi!%20I%20saw%20your%20website%20and%20want%20to%20place%20a%20chocolate%20order%20%F0%9F%8D%AB" class="nav-wa" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.534 5.862L.057 23.943l6.21-1.497A11.933 11.933 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.844 0-3.57-.49-5.063-1.345l-.362-.215-3.686.889.926-3.598-.237-.374A10 10 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
       Order on WhatsApp
     </a>
@@ -242,72 +274,64 @@
 
 <!-- HERO -->
 <section class="hero" id="home">
-  <div class="hero__bg"></div>
-  <div class="hero__orbs"><div class="orb"></div><div class="orb"></div><div class="orb"></div></div>
-  <div class="hero__content">
-    <div class="hero__inner">
-      <p class="hero__eyebrow">Handcrafted in Hyderabad</p>
-      <h1 class="hero__title">
-        Made with<br>pure love.
-        <em>Chocolates for every occasion</em>
-      </h1>
-      <p class="hero__sub">Every piece handcrafted fresh to order, using the finest ingredients. Custom boxes for birthdays, weddings, corporate gifting, and all of life's best moments.</p>
-      <div class="hero__btns">
-        <a href="https://wa.me/919014186141?text=Hi!%20I%20saw%20your%20website%20and%20want%20to%20place%20an%20order%20%F0%9F%8D%AB" class="btn btn--wa" target="_blank" rel="noopener" id="wa-hero">
+  <div class="hbg"></div>
+  <div class="horbs"><div class="orb"></div><div class="orb"></div><div class="orb"></div></div>
+  <div class="hc">
+    <div class="hi">
+      <p class="eyebrow">ArshMom-preneur. Handcrafted in Hyderabad</p>
+      <h1 class="hero-title">Made with<br>pure love.<em>Chocolates for every moment</em></h1>
+      <p class="hero-sub">Custom chocolate bars, bouquets, kunafa dates, bonbons, and gift hampers. All handcrafted fresh to order in Hyderabad.</p>
+      <div class="hero-btns">
+        <a href="https://wa.me/919014186141?text=Hi!%20I%20want%20to%20place%20a%20chocolate%20order%20%F0%9F%8D%AB" class="btn btn-wa" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.534 5.862L.057 23.943l6.21-1.497A11.933 11.933 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.844 0-3.57-.49-5.063-1.345l-.362-.215-3.686.889.926-3.598-.237-.374A10 10 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
           Order Now on WhatsApp
         </a>
-        <button class="btn btn--ghost" onclick="document.getElementById('gallery').scrollIntoView({behavior:'smooth'})">See Our Creations</button>
+        <button class="btn btn-ghost" onclick="document.getElementById('gallery').scrollIntoView({behavior:'smooth'})">See Our Creations</button>
       </div>
     </div>
   </div>
-  <div class="scroll-hint"><div class="scroll-hint__bar"></div><span>Scroll</span></div>
+  <div class="shint"><div class="shint-bar"></div><span>Scroll</span></div>
 </section>
 
 <!-- MARQUEE -->
-<div class="marquee" aria-hidden="true">
-  <div class="marquee__track">
-    <span class="marquee__item"><span class="dot">🍫</span> Handcrafted Daily</span>
-    <span class="marquee__item"><span class="dot">✦</span> Custom Gift Boxes</span>
-    <span class="marquee__item"><span class="dot">🎂</span> Birthday Specials</span>
-    <span class="marquee__item"><span class="dot">✦</span> Wedding Favours</span>
-    <span class="marquee__item"><span class="dot">🎁</span> Corporate Gifting</span>
-    <span class="marquee__item"><span class="dot">✦</span> Delivery in Hyderabad</span>
-    <span class="marquee__item"><span class="dot">🍫</span> Made Fresh to Order</span>
-    <span class="marquee__item"><span class="dot">✦</span> No Preservatives</span>
-    <span class="marquee__item"><span class="dot">🍫</span> Handcrafted Daily</span>
-    <span class="marquee__item"><span class="dot">✦</span> Custom Gift Boxes</span>
-    <span class="marquee__item"><span class="dot">🎂</span> Birthday Specials</span>
-    <span class="marquee__item"><span class="dot">✦</span> Wedding Favours</span>
-    <span class="marquee__item"><span class="dot">🎁</span> Corporate Gifting</span>
-    <span class="marquee__item"><span class="dot">✦</span> Delivery in Hyderabad</span>
-    <span class="marquee__item"><span class="dot">🍫</span> Made Fresh to Order</span>
-    <span class="marquee__item"><span class="dot">✦</span> No Preservatives</span>
+<div class="mq" aria-hidden="true">
+  <div class="mq-track">
+    <span class="mq-item"><span class="dot">🍫</span> Handcrafted Daily</span>
+    <span class="mq-item"><span class="dot">✦</span> From Rs.60 Only</span>
+    <span class="mq-item"><span class="dot">🎂</span> Birthday Hampers</span>
+    <span class="mq-item"><span class="dot">✦</span> Kunafa Chocolate Dates</span>
+    <span class="mq-item"><span class="dot">🎁</span> Custom Gift Boxes</span>
+    <span class="mq-item"><span class="dot">✦</span> Wedding Favours</span>
+    <span class="mq-item"><span class="dot">🍓</span> Chocolate Strawberries</span>
+    <span class="mq-item"><span class="dot">✦</span> Corporate Gifting</span>
+    <span class="mq-item"><span class="dot">🍫</span> Handcrafted Daily</span>
+    <span class="mq-item"><span class="dot">✦</span> From Rs.60 Only</span>
+    <span class="mq-item"><span class="dot">🎂</span> Birthday Hampers</span>
+    <span class="mq-item"><span class="dot">✦</span> Kunafa Chocolate Dates</span>
+    <span class="mq-item"><span class="dot">🎁</span> Custom Gift Boxes</span>
+    <span class="mq-item"><span class="dot">✦</span> Wedding Favours</span>
+    <span class="mq-item"><span class="dot">🍓</span> Chocolate Strawberries</span>
+    <span class="mq-item"><span class="dot">✦</span> Corporate Gifting</span>
   </div>
 </div>
 
 <!-- ABOUT -->
-<section class="section about" id="about">
-  <div class="container">
-    <div class="about__grid">
-      <div class="about__visual reveal">
-        <div class="about__card">
-          <div class="about__card-emoji">🍫</div>
-        </div>
-        <div class="about__badge">
-          <span class="about__badge-num">100%</span>
-          <span class="about__badge-text">Fresh Made</span>
-        </div>
+<section class="sec about" id="about">
+  <div class="con">
+    <div class="about-grid">
+      <div class="about-vis rv">
+        <div class="about-card"><span class="about-emoji">🍫</span></div>
+        <div class="about-badge"><span class="about-badge-num">100%</span><span class="about-badge-txt">Fresh Made</span></div>
       </div>
-      <div class="reveal d1">
-        <p class="section-label about" style="color:var(--gold)">Our Story</p>
-        <h2 class="section-title" style="color:var(--cocoa)">Where chocolate becomes a memory.</h2>
-        <p class="about__body" style="margin-top:1.25rem">AS Choco Bites was born from a simple belief: that a beautifully made chocolate can turn any moment into something special. Based in Hyderabad, every piece we make is crafted by hand, using real ingredients and no preservatives.</p>
-        <p class="about__body">Whether you want a personal gift box, wedding favours for a hundred guests, or a custom order for your brand, we make it fresh. Just for you.</p>
+      <div class="rv d1">
+        <p class="sec-lbl" style="color:var(--gold)">Our Story</p>
+        <h2 class="sec-title" style="color:var(--cocoa)">A mother's hope, turned into something sweet.</h2>
+        <p class="about-body" style="margin-top:1.25rem">AS Choco Bites started as a mother's hope, to build something of her own and support her family. Every piece is made by hand, with real ingredients and real love. No shortcuts, no preservatives.</p>
+        <p class="about-body">From custom name bars to kunafa dates, chocolate bouquets to bonbons, everything is made fresh to order in Hyderabad, starting from just Rs.60.</p>
         <div class="pillars">
-          <div class="pillar"><div class="pillar__icon">🍫</div><h4>Real Chocolate</h4><p>Premium cocoa, no shortcuts</p></div>
-          <div class="pillar"><div class="pillar__icon">🎨</div><h4>Custom Made</h4><p>Every order is unique</p></div>
-          <div class="pillar"><div class="pillar__icon">🚚</div><h4>Fresh Delivered</h4><p>Same-day in Hyderabad</p></div>
+          <div class="pillar"><div class="pillar-icon">🍫</div><h4>Real Chocolate</h4><p>Premium ingredients always</p></div>
+          <div class="pillar"><div class="pillar-icon">🎨</div><h4>Custom Made</h4><p>Every order is unique</p></div>
+          <div class="pillar"><div class="pillar-icon">🚚</div><h4>Fresh Delivered</h4><p>Hyderabad, same day</p></div>
         </div>
       </div>
     </div>
@@ -315,85 +339,172 @@
 </section>
 
 <!-- INSTAGRAM GALLERY -->
-<section class="section gallery" id="gallery">
-  <div class="container">
-    <div class="section-header reveal">
-      <p class="section-label" style="color:var(--gold-light)">From Our Kitchen</p>
-      <h2 class="section-title" style="color:var(--cream)">Our creations, straight from Instagram.</h2>
-      <p class="section-sub">Tap any photo to see it up close. Every piece is made to order.</p>
+<section class="sec gallery" id="gallery">
+  <div class="con">
+    <div class="sec-hdr rv">
+      <p class="sec-lbl">From Our Kitchen</p>
+      <h2 class="sec-title" style="color:var(--cream)">Real creations. Real orders.</h2>
+      <p class="sec-sub">Tap any post to see it full size, then tap Order to get yours.</p>
     </div>
 
-    <!-- Gallery renders here -->
-    <div id="gallery-content">
-      <div class="gallery__loading">
-        <div class="gallery__spinner"></div>
-        <p style="font-size:0.85rem">Loading your Instagram photos...</p>
-      </div>
+    <div class="posts-grid" id="posts-grid">
+      <!-- Injected by JS below -->
     </div>
 
-    <!-- Fallback: always-visible Instagram embed grid -->
-    <div id="insta-embed-grid" style="display:none;">
-      <div class="gallery__grid" id="static-gallery"></div>
-    </div>
-
-    <div class="gallery__cta reveal">
-      <a href="https://www.instagram.com/as_choco_bites" target="_blank" rel="noopener" class="btn btn--gold">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
-        See all on Instagram
+    <div class="post-cta-row rv" style="margin-top:2.5rem">
+      <a href="https://www.instagram.com/as_choco_bites" target="_blank" rel="noopener" class="btn btn-ig">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+        See all posts on Instagram
       </a>
     </div>
   </div>
 </section>
 
 <!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
-  <div class="lightbox__inner">
-    <button class="lightbox__close" id="lightbox-close" aria-label="Close">&times;</button>
-    <img class="lightbox__img" id="lightbox-img" src="" alt="" />
-    <p class="lightbox__caption" id="lightbox-caption"></p>
-    <div class="lightbox__nav">
-      <button class="btn btn--dark" id="lightbox-prev">&#8592; Prev</button>
-      <button class="btn btn--gold" id="wa-lightbox" style="flex:1;justify-content:center" onclick="window.open(document.getElementById('wa-hero').href,'_blank')">Order This Style</button>
-      <button class="btn btn--dark" id="lightbox-next">Next &#8594;</button>
+<div class="lb" id="lb" role="dialog" aria-modal="true">
+  <div class="lb-inner">
+    <button class="lb-close" id="lb-close" aria-label="Close">&times;</button>
+    <div class="lb-embed"><iframe id="lb-iframe" src="" loading="lazy" allowtransparency="true" allowfullscreen="true" scrolling="no" frameborder="0"></iframe></div>
+    <p class="lb-caption" id="lb-cap"></p>
+    <div class="lb-nav">
+      <button class="btn btn-dark" id="lb-prev">&#8592;</button>
+      <button class="btn btn-dark" id="lb-next">&#8594;</button>
+    </div>
+    <div class="lb-order">
+      <a href="https://wa.me/919014186141?text=Hi!%20I%20saw%20this%20chocolate%20on%20your%20website%20and%20want%20to%20order%20something%20similar!%20%F0%9F%8D%AB" target="_blank" rel="noopener" class="btn btn-wa" style="width:100%;justify-content:center">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.534 5.862L.057 23.943l6.21-1.497A11.933 11.933 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.844 0-3.57-.49-5.063-1.345l-.362-.215-3.686.889.926-3.598-.237-.374A10 10 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
+        Order This Style on WhatsApp
+      </a>
     </div>
   </div>
 </div>
 
-<!-- OCCASIONS -->
-<section class="section occasions" id="occasions">
-  <div class="container">
-    <div class="section-header reveal">
-      <p class="section-label" style="color:var(--gold)">Perfect for</p>
-      <h2 class="section-title" style="color:var(--cocoa)">Every occasion deserves chocolate.</h2>
-      <p class="section-sub" style="color:var(--text-muted)">Custom orders for all of life's best moments.</p>
+<!-- FEATURED STORY -->
+<section class="sec story" id="story">
+  <div class="con">
+    <div class="story-inner">
+      <div class="story-quote rv">
+        <p class="story-text">"AS ChocoBites started as a mother's hope, to build something of her own. And what she created is more than chocolate. It's a reminder that sweetness made with heart, always leaves a mark."</p>
+      </div>
+      <div class="story-right rv d1">
+        <p class="sec-lbl">By the numbers</p>
+        <h2 class="sec-title">A small business with a big heart.</h2>
+        <p style="color:rgba(253,246,236,.6);font-size:.95rem;line-height:1.8;margin-top:1rem">Every order placed with AS Choco Bites goes directly to supporting a Hyderabad family. Arsh, the mom behind the brand, makes every single piece herself.</p>
+        <div class="story-stats">
+          <div class="stat"><div class="stat-num">₹60</div><div class="stat-lbl">Starting price</div></div>
+          <div class="stat"><div class="stat-num">24+</div><div class="stat-lbl">Flavours available</div></div>
+          <div class="stat"><div class="stat-num">100%</div><div class="stat-lbl">Handmade</div></div>
+        </div>
+      </div>
     </div>
-    <div class="occasions__grid">
-      <div class="occasion reveal"><div class="occasion__icon">🎂</div><div><h3>Birthdays</h3><p>Custom name boxes, themed collections, and personalised messages.</p></div></div>
-      <div class="occasion reveal d1"><div class="occasion__icon">💍</div><div><h3>Weddings and Engagements</h3><p>Elegant favours, baraat sweets, and couple gift boxes.</p></div></div>
-      <div class="occasion reveal"><div class="occasion__icon">🎁</div><div><h3>Corporate Gifts</h3><p>Branded boxes for your team, clients, and events. Bulk pricing available.</p></div></div>
-      <div class="occasion reveal d1"><div class="occasion__icon">🌙</div><div><h3>Festivals</h3><p>Diwali, Eid, Christmas, and all special celebrations.</p></div></div>
-      <div class="occasion reveal"><div class="occasion__icon">💝</div><div><h3>Valentine's Day</h3><p>Heart boxes, romantic assortments, and sweet surprises.</p></div></div>
-      <div class="occasion reveal d1"><div class="occasion__icon">👶</div><div><h3>Baby Showers</h3><p>Pastel gift boxes and sweet favours for new arrivals.</p></div></div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="sec products" id="products">
+  <div class="con">
+    <div class="sec-hdr rv">
+      <p class="sec-lbl" style="color:var(--gold)">What We Make</p>
+      <h2 class="sec-title" style="color:var(--cocoa)">Something for every craving.</h2>
+      <p class="sec-sub">All made fresh. All customisable. DM to order anything.</p>
+    </div>
+    <div class="prod-grid">
+      <div class="prod-card rv">
+        <div class="prod-vis">🍫</div>
+        <div class="prod-body">
+          <p class="prod-tag">Bestseller</p>
+          <h3 class="prod-name">Custom Name Chocolate Bar</h3>
+          <p class="prod-desc">Personalised chocolate bars with your name or message. Perfect for gifting.</p>
+          <p class="prod-price">From Rs.60 <small>per bar</small></p>
+        </div>
+      </div>
+      <div class="prod-card rv d1">
+        <div class="prod-vis">🌴</div>
+        <div class="prod-body">
+          <p class="prod-tag">Most Loved</p>
+          <h3 class="prod-name">Kunafa Chocolate Dates</h3>
+          <p class="prod-desc">Kunafa, Biscoff, Peanut Butter, Butterscotch, Caramel fillings. Dubai-style.</p>
+          <p class="prod-price">Ask for pricing</p>
+        </div>
+      </div>
+      <div class="prod-card rv d2">
+        <div class="prod-vis">💐</div>
+        <div class="prod-body">
+          <p class="prod-tag">Popular Gift</p>
+          <h3 class="prod-name">Chocolate Bouquet</h3>
+          <p class="prod-desc">A beautiful bouquet made entirely of chocolates. Best surprise gift in Hyderabad.</p>
+          <p class="prod-price">Ask for pricing</p>
+        </div>
+      </div>
+      <div class="prod-card rv">
+        <div class="prod-vis">🍓</div>
+        <div class="prod-body">
+          <p class="prod-tag">Seasonal</p>
+          <h3 class="prod-name">Chocolate Strawberries</h3>
+          <p class="prod-desc">Fresh strawberries dipped in rich chocolate. A luxurious treat.</p>
+          <p class="prod-price">Ask for pricing</p>
+        </div>
+      </div>
+      <div class="prod-card rv d1">
+        <div class="prod-vis">🎁</div>
+        <div class="prod-body">
+          <p class="prod-tag">Gift Special</p>
+          <h3 class="prod-name">Chocolate Hamper Box</h3>
+          <p class="prod-desc">Curated hampers with bonbons, bars, dates, and more. Great for all occasions.</p>
+          <p class="prod-price">Ask for pricing</p>
+        </div>
+      </div>
+      <div class="prod-card rv d2">
+        <div class="prod-vis">⚡</div>
+        <div class="prod-body">
+          <p class="prod-tag">Health</p>
+          <h3 class="prod-name">Protein Bars</h3>
+          <p class="prod-desc">Handmade protein bars. Tasty, nutritious, and customisable.</p>
+          <p class="prod-price">Ask for pricing</p>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:2.5rem" class="rv">
+      <a href="https://wa.me/919014186141?text=Hi!%20Can%20you%20share%20your%20full%20menu%20and%20pricing?%20%F0%9F%8D%AB" target="_blank" rel="noopener" class="btn btn-gold">Get Full Menu on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- OCCASIONS -->
+<section class="sec occasions" id="occasions">
+  <div class="con">
+    <div class="sec-hdr rv">
+      <p class="sec-lbl">Perfect for</p>
+      <h2 class="sec-title" style="color:var(--cocoa)">Every occasion deserves chocolate.</h2>
+      <p class="sec-sub" style="color:var(--muted)">Custom orders for all of life's best moments.</p>
+    </div>
+    <div class="occ-grid">
+      <div class="occ rv"><div class="occ-icon">🎂</div><div><h3>Birthdays</h3><p>Custom name boxes, themed hampers, and personalised messages.</p></div></div>
+      <div class="occ rv d1"><div class="occ-icon">💍</div><div><h3>Weddings and Engagements</h3><p>Elegant favours, baraat sweets, and couple gift boxes.</p></div></div>
+      <div class="occ rv"><div class="occ-icon">🎁</div><div><h3>Corporate Gifts</h3><p>Branded boxes for your team and clients. Bulk pricing available.</p></div></div>
+      <div class="occ rv d1"><div class="occ-icon">🌙</div><div><h3>Eid, Ramadan and Festivals</h3><p>Special dates, kunafa chocolates, and festival hampers.</p></div></div>
+      <div class="occ rv"><div class="occ-icon">🎓</div><div><h3>Results and Achievements</h3><p>Celebrate big goals with a custom chocolate gift.</p></div></div>
+      <div class="occ rv d1"><div class="occ-icon">💝</div><div><h3>Anniversaries and Valentine's</h3><p>Heart boxes, romantic hampers, and sweet surprises.</p></div></div>
     </div>
   </div>
 </section>
 
 <!-- HOW TO ORDER -->
-<section class="section how" id="how">
-  <div class="container">
-    <div class="section-header reveal">
-      <p class="section-label">How to Order</p>
-      <h2 class="section-title">It takes just one message.</h2>
-      <p class="section-sub">No forms, no waiting. Send us a message and we handle everything from there.</p>
+<section class="sec how" id="how">
+  <div class="con">
+    <div class="sec-hdr rv">
+      <p class="sec-lbl">How to Order</p>
+      <h2 class="sec-title">It takes just one message.</h2>
+      <p class="sec-sub">No forms. No waiting. Send a message and we handle everything.</p>
     </div>
     <div class="steps">
-      <div class="step reveal"><div class="step__num">1</div><h3>Message Us</h3><p>Send a WhatsApp or Instagram DM with what you have in mind.</p></div>
-      <div class="step reveal d1"><div class="step__num">2</div><h3>We Discuss</h3><p>We talk through flavours, box size, packaging, and your budget.</p></div>
-      <div class="step reveal d2"><div class="step__num">3</div><h3>We Craft</h3><p>Your order is handmade fresh, with care in every detail.</p></div>
-      <div class="step reveal d3"><div class="step__num">4</div><h3>We Deliver</h3><p>Pick up or delivery within Hyderabad. Ready when you need it.</p></div>
+      <div class="step rv"><div class="step-num">1</div><h3>Message Us</h3><p>WhatsApp or Instagram DM with what you have in mind.</p></div>
+      <div class="step rv d1"><div class="step-num">2</div><h3>We Discuss</h3><p>Flavours, box size, packaging, occasion, and budget.</p></div>
+      <div class="step rv d2"><div class="step-num">3</div><h3>We Craft</h3><p>Made fresh by hand with care in every detail.</p></div>
+      <div class="step rv d3"><div class="step-num">4</div><h3>We Deliver</h3><p>Pick up or delivery within Hyderabad.</p></div>
     </div>
-    <div class="how__cta reveal">
-      <a href="https://wa.me/919014186141?text=Hi!%20I%20want%20to%20place%20a%20chocolate%20order%20%F0%9F%8D%AB" class="btn btn--wa" target="_blank" rel="noopener" id="wa-how">
+    <div style="text-align:center;margin-top:3.5rem" class="rv">
+      <a href="https://wa.me/919014186141?text=Hi!%20I%20want%20to%20place%20a%20chocolate%20order!%20%F0%9F%8D%AB" target="_blank" rel="noopener" class="btn btn-wa">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.534 5.862L.057 23.943l6.21-1.497A11.933 11.933 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.844 0-3.57-.49-5.063-1.345l-.362-.215-3.686.889.926-3.598-.237-.374A10 10 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
         Start Your Order on WhatsApp
       </a>
@@ -402,41 +513,41 @@
 </section>
 
 <!-- TESTIMONIALS -->
-<section class="section testimonials" id="testimonials">
-  <div class="container">
-    <div class="section-header reveal">
-      <p class="section-label" style="color:var(--gold)">What People Say</p>
-      <h2 class="section-title" style="color:var(--cocoa)">Happy customers in Hyderabad.</h2>
+<section class="sec testi" id="reviews">
+  <div class="con">
+    <div class="sec-hdr rv">
+      <p class="sec-lbl" style="color:var(--gold)">What Customers Say</p>
+      <h2 class="sec-title" style="color:var(--cocoa)">Happy customers all over Hyderabad.</h2>
     </div>
-    <div class="testimonials__grid">
-      <div class="testimonial reveal"><div class="testimonial__stars">★★★★★</div><p class="testimonial__text">I ordered a custom birthday box and every single person at the party asked where it was from. The chocolates were gorgeous and tasted even better than they looked.</p><p class="testimonial__name">Priya M.</p><p class="testimonial__loc">Banjara Hills, Hyderabad</p></div>
-      <div class="testimonial reveal d1"><div class="testimonial__stars">★★★★★</div><p class="testimonial__text">We used AS Choco Bites for our wedding favours. They packed 200 boxes beautifully and delivered right on time. All our guests loved them. Would order again for any occasion.</p><p class="testimonial__name">Arjun and Sneha</p><p class="testimonial__loc">Jubilee Hills, Hyderabad</p></div>
-      <div class="testimonial reveal d2"><div class="testimonial__stars">★★★★★</div><p class="testimonial__text">Best homemade chocolates in Hyderabad, no doubt. The praline box is something I order every month now. Rich, fresh, and always beautifully packed.</p><p class="testimonial__name">Kavitha R.</p><p class="testimonial__loc">Madhapur, Hyderabad</p></div>
+    <div class="testi-grid">
+      <div class="tcard rv"><div class="tcard-stars">★★★★★</div><p class="tcard-text">I ordered a custom birthday hamper and every single person asked where it was from. Gorgeous packaging and tasted even better than it looked.</p><p class="tcard-name">Priya M.</p><p class="tcard-loc">Banjara Hills, Hyderabad</p></div>
+      <div class="tcard rv d1"><div class="tcard-stars">★★★★★</div><p class="tcard-text">The kunafa chocolate dates were absolutely addictive. Ordered for Ramadan and the whole family loved them. Will order again for Eid.</p><p class="tcard-name">Fatima S.</p><p class="tcard-loc">Tolichowki, Hyderabad</p></div>
+      <div class="tcard rv d2"><div class="tcard-stars">★★★★★</div><p class="tcard-text">Best chocolates in Hyderabad at this price point. The name bar I ordered for my sister's birthday was a huge hit. Packaging was so pretty.</p><p class="tcard-name">Kavitha R.</p><p class="tcard-loc">Madhapur, Hyderabad</p></div>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
-<section class="section cta-banner" id="contact">
-  <div class="container">
-    <div class="cta-banner__inner">
-      <p class="section-label cta-banner" style="color:var(--gold-light)">Get in Touch</p>
-      <h2 class="cta-banner__title">Let's make something sweet.</h2>
-      <p class="cta-banner__sub">Message us on WhatsApp or Instagram. Custom orders, bulk orders, last-minute gifts. We are always here.</p>
-      <div class="cta-banner__btns">
-        <a href="https://wa.me/919014186141?text=Hi!%20I%20want%20to%20order%20chocolates%20%F0%9F%8D%AB" class="btn btn--wa" target="_blank" rel="noopener" id="wa-cta">
+<section class="sec cta" id="contact">
+  <div class="con">
+    <div class="cta-inner">
+      <p class="sec-lbl">Get in Touch</p>
+      <h2 class="cta-title">Let's make something sweet.</h2>
+      <p class="cta-sub">Message on WhatsApp or Instagram. Custom orders, bulk orders, last-minute gifts. We are always here.</p>
+      <div class="cta-btns">
+        <a href="https://wa.me/919014186141?text=Hi!%20I%20want%20to%20order%20chocolates!%20%F0%9F%8D%AB" target="_blank" rel="noopener" class="btn btn-wa">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.534 5.862L.057 23.943l6.21-1.497A11.933 11.933 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.844 0-3.57-.49-5.063-1.345l-.362-.215-3.686.889.926-3.598-.237-.374A10 10 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
           Message on WhatsApp
         </a>
-        <a href="https://www.instagram.com/as_choco_bites" class="btn btn--ghost" target="_blank" rel="noopener">
+        <a href="https://www.instagram.com/as_choco_bites" class="btn btn-ig" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
           DM on Instagram
         </a>
       </div>
-      <div class="cta-banner__details">
-        <span class="cta-banner__detail"><span>📍</span> Hyderabad, Telangana</span>
-        <span class="cta-banner__detail"><span>⏰</span> Orders open daily</span>
-        <span class="cta-banner__detail"><span>📦</span> Delivery within Hyderabad</span>
+      <div class="cta-details">
+        <span class="cta-detail"><em>📍</em> Hyderabad, Telangana</span>
+        <span class="cta-detail"><em>⏰</em> Orders open daily</span>
+        <span class="cta-detail"><em>💰</em> Starting from Rs.60</span>
       </div>
     </div>
   </div>
@@ -444,222 +555,110 @@
 
 <!-- FOOTER -->
 <footer class="footer">
-  <div class="container">
-    <p class="footer__logo">AS Choco Bites</p>
-    <div class="footer__links">
-      <a href="#about" onclick="event.preventDefault();document.getElementById('about').scrollIntoView({behavior:'smooth'})">About</a>
-      <a href="#gallery" onclick="event.preventDefault();document.getElementById('gallery').scrollIntoView({behavior:'smooth'})">Gallery</a>
-      <a href="#occasions" onclick="event.preventDefault();document.getElementById('occasions').scrollIntoView({behavior:'smooth'})">Occasions</a>
-      <a href="#contact" onclick="event.preventDefault();document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contact</a>
+  <div class="con">
+    <p class="footer-logo">AS Choco Bites</p>
+    <div class="footer-links">
+      <a onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">About</a>
+      <a onclick="document.getElementById('gallery').scrollIntoView({behavior:'smooth'})">Gallery</a>
+      <a onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Products</a>
+      <a onclick="document.getElementById('occasions').scrollIntoView({behavior:'smooth'})">Occasions</a>
       <a href="https://www.instagram.com/as_choco_bites" target="_blank">Instagram</a>
     </div>
-    <p class="footer__copy">Handcrafted chocolates in Hyderabad. Made with love, delivered fresh.</p>
+    <p class="footer-copy">Handcrafted chocolates in Hyderabad. Made with love by ArshMom-preneur.</p>
   </div>
 </footer>
 
-<!-- FLOATING WHATSAPP -->
-<a class="wa-float" href="https://wa.me/919014186141?text=Hi!%20I%20want%20to%20order%20chocolates%20%F0%9F%8D%AB" target="_blank" rel="noopener" aria-label="Order on WhatsApp" id="wa-float">
+<!-- FLOAT WA -->
+<a class="wa-float" href="https://wa.me/919014186141?text=Hi!%20I%20want%20to%20order%20chocolates!%20%F0%9F%8D%AB" target="_blank" rel="noopener" aria-label="Order on WhatsApp">
   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.534 5.862L.057 23.943l6.21-1.497A11.933 11.933 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.844 0-3.57-.49-5.063-1.345l-.362-.215-3.686.889.926-3.598-.237-.374A10 10 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
 </a>
 
 <script>
-// ============ CONFIG ============
-const APIFY_TOKEN = 'apify_api_XUr207n1cM7d8qPJtdfcwjIxJkWhRM4lWggq';
-const INSTAGRAM_USERNAME = 'as_choco_bites';
-const WHATSAPP_NUMBER = '919014186141';
-const WA_MSG = encodeURIComponent('Hi! I saw your website and want to place a chocolate order 🍫');
-const WA_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${WA_MSG}`;
-const IG_URL = `https://www.instagram.com/${INSTAGRAM_USERNAME}/`;
-
-// Beautiful chocolate-themed placeholder cards shown if Apify can't load
-// Each links to your Instagram and uses rich CSS colours
-const PLACEHOLDER_CARDS = [
-  { emoji:'🍫', label:'Dark Chocolate Bites',     bg:'linear-gradient(145deg,#3d1e10,#5c2e18)', caption:'Rich dark chocolate, handcrafted fresh.' },
-  { emoji:'🍬', label:'Milk Chocolate Assortment', bg:'linear-gradient(145deg,#2a1810,#4a2c18)', caption:'Smooth, creamy milk chocolate in custom boxes.' },
-  { emoji:'🌰', label:'Nutty Pralines',            bg:'linear-gradient(145deg,#2a1a0c,#4a2e14)', caption:'Cashew and almond pralines in a chocolate shell.' },
-  { emoji:'🍓', label:'Fruit Centre Chocolates',   bg:'linear-gradient(145deg,#381020,#5a1a30)', caption:'Strawberry and mango fillings, white chocolate shell.' },
-  { emoji:'🎁', label:'Custom Gift Boxes',          bg:'linear-gradient(145deg,#1e1a10,#382e18)', caption:'Your mix, your message. Made to order.' },
-  { emoji:'💍', label:'Wedding Favours',            bg:'linear-gradient(145deg,#20101e,#381830)', caption:'Beautifully wrapped for your big day.' },
-  { emoji:'✨', label:'Festival Collections',      bg:'linear-gradient(145deg,#1a1a10,#30300e)', caption:'Diwali, Eid, Christmas and more.' },
-  { emoji:'🎂', label:'Birthday Specials',          bg:'linear-gradient(145deg,#1e1020,#38183c)', caption:'Custom name boxes and themed chocolates.' },
-  { emoji:'🖤', label:'Belgian Dark Selection',     bg:'linear-gradient(145deg,#100808,#280c0c)', caption:'Intense 70% dark chocolate for true lovers.' },
+// ============ YOUR REAL INSTAGRAM POSTS (from Apify) ============
+const POSTS = [
+  { shortcode:'DZhj3JmhbHe', caption:'Say it with Chocolates 🍫🎁', likes:0, date:'Jun 2026' },
+  { shortcode:'DYkINWjBwPe', caption:'Your next sorry should be like this 😌🤎 Gift chocolates instead!', likes:0, date:'May 2026' },
+  { shortcode:'DYM9n09hWq1', caption:'Sorry should look like this 😋🤎 DM to place your order', likes:20, date:'May 2026' },
+  { shortcode:'DXrMM7KkjFu', caption:'Tag someone who just crushed a big goal! Celebrate with chocolates 🥂', likes:24, date:'Apr 2026' },
+  { shortcode:'DXmU4gHgdcw', caption:'DM to place your order 🤎🎁 Custom chocolates, Hyderabad', likes:17, date:'Apr 2026' },
+  { shortcode:'DWhAiJUE386', caption:'DM to make birthdays sweeter 🎂🍫 Affordable prices, perfect gifting', likes:15, date:'Mar 2026' },
+  { shortcode:'DWG9Jjhgd3d', caption:'Eid Mubarak! Eidi for kids, sweet chocolate gifts 🤎🫂', likes:23, date:'Mar 2026' },
+  { shortcode:'DUGJIXUkspJ', caption:'Good chocolates don\'t have to be expensive. Starting from Rs.60 only 🍫', likes:24, date:'Jan 2026' },
+  { shortcode:'DT8DgAwErK_', caption:'Some days chocolates sell out, some days I end up eating them 🥲🍫 Small business life!', likes:32, date:'Jan 2026' },
+  { shortcode:'DTfD1MSkZlY', caption:'Protein bars, Bonbons, Designer chocolates, Dark Chocolate 🍫 All handmade!', likes:22, date:'Jan 2026' },
+  { shortcode:'DTVrgGhEmoB', caption:'Chocolate strawberries 🍓🍫 Fresh and luxurious, made to order', likes:14, date:'Jan 2026' },
+  { shortcode:'DSStUAzkkge', caption:'Your sign to gift her chocolates 🍫🎁 Bouquets, hampers, custom boxes', likes:22, date:'Dec 2025' },
 ];
+
+// ============ BUILD GALLERY ============
+const grid = document.getElementById('posts-grid');
+POSTS.forEach((p, i) => {
+  const embedUrl = `https://www.instagram.com/p/${p.shortcode}/embed/captioned/`;
+  const postUrl  = `https://www.instagram.com/p/${p.shortcode}/`;
+  const cleanCap = p.caption.replace(/#\w+/g,'').trim();
+
+  const card = document.createElement('div');
+  card.className = 'post-card rv' + (i%3===1?' d1':i%3===2?' d2':'');
+  card.innerHTML = `
+    <div class="post-thumb">
+      <iframe src="${embedUrl}" loading="lazy" allowtransparency="true" allowfullscreen="true" scrolling="no" frameborder="0" title="Instagram post"></iframe>
+      <div class="post-thumb-overlay" data-idx="${i}" role="button" tabindex="0" aria-label="View ${cleanCap.slice(0,40)}"></div>
+    </div>
+    <div class="post-body">
+      <p class="post-caption">${cleanCap}</p>
+      <div class="post-meta">
+        ${p.likes > 0 ? `<span class="post-likes">♥ ${p.likes} likes</span>` : '<span></span>'}
+        <span class="post-date">${p.date}</span>
+      </div>
+    </div>`;
+  grid.appendChild(card);
+});
+
+// ============ LIGHTBOX ============
+let curIdx = 0;
+const lb     = document.getElementById('lb');
+const lbIf   = document.getElementById('lb-iframe');
+const lbCap  = document.getElementById('lb-cap');
+
+function openLB(idx) {
+  curIdx = idx;
+  const p = POSTS[idx];
+  lbIf.src = `https://www.instagram.com/p/${p.shortcode}/embed/captioned/`;
+  lbCap.textContent = p.caption.replace(/#\w+/g,'').trim().slice(0,180);
+  lb.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLB() { lb.classList.remove('open'); document.body.style.overflow = ''; lbIf.src = ''; }
+
+document.getElementById('lb-close').onclick = closeLB;
+document.getElementById('lb-prev').onclick = () => openLB((curIdx - 1 + POSTS.length) % POSTS.length);
+document.getElementById('lb-next').onclick = () => openLB((curIdx + 1) % POSTS.length);
+lb.addEventListener('click', e => { if (e.target === lb) closeLB(); });
+document.addEventListener('keydown', e => {
+  if (!lb.classList.contains('open')) return;
+  if (e.key==='Escape') closeLB();
+  if (e.key==='ArrowLeft')  openLB((curIdx-1+POSTS.length)%POSTS.length);
+  if (e.key==='ArrowRight') openLB((curIdx+1)%POSTS.length);
+});
+
+// Click overlay to open lightbox
+document.addEventListener('click', e => {
+  const ov = e.target.closest('[data-idx]');
+  if (ov) openLB(parseInt(ov.dataset.idx));
+});
+document.addEventListener('keydown', e => {
+  if ((e.key==='Enter'||e.key===' ') && e.target.dataset.idx !== undefined) openLB(parseInt(e.target.dataset.idx));
+});
 
 // ============ NAV SCROLL ============
 const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60), { passive: true });
-
-// ============ SMOOTH SCROLL ============
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    const t = document.querySelector(a.getAttribute('href'));
-    if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
-  });
-});
+window.addEventListener('scroll', () => nav.classList.toggle('sc', window.scrollY > 60), {passive:true});
 
 // ============ REVEAL ============
-const revealObs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
-}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
-
-// ============ GALLERY ============
-let galleryItems = [];
-let lightboxIdx  = 0;
-
-function makeCard(item, idx, isPhoto) {
-  const el = document.createElement('div');
-  el.className = 'gallery__item reveal';
-  el.tabIndex = 0;
-  el.setAttribute('role', 'button');
-  el.setAttribute('aria-label', item.caption || item.label || `Photo ${idx + 1}`);
-
-  if (isPhoto) {
-    const img = document.createElement('img');
-    img.src     = item.src;
-    img.alt     = item.caption || 'AS Choco Bites';
-    img.loading = 'lazy';
-    img.onerror = () => el.remove();
-    el.appendChild(img);
-
-    const ov = document.createElement('div');
-    ov.className = 'gallery__overlay';
-    if (item.caption) {
-      const c = document.createElement('p');
-      c.className = 'gallery__caption';
-      c.textContent = item.caption.replace(/#\w+/g,'').trim().slice(0,120);
-      ov.appendChild(c);
-    }
-    if (item.likes > 0) {
-      const l = document.createElement('p');
-      l.className = 'gallery__likes';
-      l.textContent = `♥ ${item.likes.toLocaleString()} likes`;
-      ov.appendChild(l);
-    }
-    el.appendChild(ov);
-    el.addEventListener('click',   () => openLightbox(idx));
-    el.addEventListener('keydown', e => { if (e.key==='Enter'||e.key===' ') openLightbox(idx); });
-
-  } else {
-    // Placeholder card: clicks straight to Instagram
-    el.style.cssText = `background:${item.bg};display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.75rem;padding:1.5rem;cursor:pointer;text-decoration:none;`;
-    const emo = document.createElement('span');
-    emo.style.cssText = 'font-size:3rem;filter:drop-shadow(0 4px 12px rgba(0,0,0,0.5));';
-    emo.textContent = item.emoji;
-    const lbl = document.createElement('p');
-    lbl.style.cssText = 'font-family:"Cormorant Garamond",serif;font-size:1rem;color:#FDF6EC;text-align:center;font-weight:400;';
-    lbl.textContent = item.label;
-    const cap = document.createElement('p');
-    cap.style.cssText = 'font-size:0.72rem;color:rgba(253,246,236,0.55);text-align:center;line-height:1.5;';
-    cap.textContent = item.caption;
-    const tag = document.createElement('p');
-    tag.style.cssText = 'font-size:0.62rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#E8B86D;margin-top:0.25rem;';
-    tag.textContent = 'Tap to see on Instagram';
-    el.append(emo, lbl, cap, tag);
-    el.addEventListener('click',   () => window.open(IG_URL, '_blank'));
-    el.addEventListener('keydown', e => { if (e.key==='Enter'||e.key===' ') window.open(IG_URL,'_blank'); });
-  }
-
-  return el;
-}
-
-function renderGrid(container, items, isPhoto) {
-  const grid = document.createElement('div');
-  grid.className = 'gallery__grid';
-  items.forEach((item, i) => grid.appendChild(makeCard(item, i, isPhoto)));
-  container.innerHTML = '';
-  container.appendChild(grid);
-  grid.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
-}
-
-function showPlaceholders(container) {
-  galleryItems = []; // no lightbox for placeholders
-  const note = document.createElement('p');
-  note.style.cssText = 'text-align:center;color:rgba(253,246,236,0.4);font-size:0.8rem;margin-bottom:1.5rem;';
-  note.textContent = 'Tap any card to see real photos on Instagram.';
-  container.innerHTML = '';
-  container.appendChild(note);
-  const grid = document.createElement('div');
-  grid.className = 'gallery__grid';
-  PLACEHOLDER_CARDS.forEach((item, i) => grid.appendChild(makeCard(item, i, false)));
-  container.appendChild(grid);
-  grid.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
-}
-
-async function loadInstagramPhotos() {
-  const container = document.getElementById('gallery-content');
-
-  // Try Apify post scraper
-  const tryFetch = async (actorId, body) => {
-    const r = await fetch(
-      `https://api.apify.com/v2/acts/${actorId}/run-sync-get-dataset-items?token=${APIFY_TOKEN}&timeout=90`,
-      { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body) }
-    );
-    if (!r.ok) throw new Error(r.status);
-    return r.json();
-  };
-
-  try {
-    const data = await tryFetch('apify~instagram-post-scraper', {
-      username: [INSTAGRAM_USERNAME], resultsLimit: 12, dataDetailLevel: 'basicData'
-    });
-    const mapped = (Array.isArray(data) ? data : [])
-      .map(p => ({ src: p.displayUrl||p.imageUrl||p.thumbnailUrl||'', caption: p.caption||p.text||'', likes: p.likesCount||p.likes||0, url: p.url||IG_URL }))
-      .filter(p => p.src);
-    if (mapped.length) { galleryItems = mapped; renderGrid(container, mapped, true); return; }
-    throw new Error('empty');
-  } catch (_) {}
-
-  // Fallback: profile scraper (returns latestPosts)
-  try {
-    const data2 = await tryFetch('apify~instagram-profile-scraper', { usernames: [INSTAGRAM_USERNAME] });
-    const profile = Array.isArray(data2) ? data2[0] : data2;
-    const posts = profile?.latestPosts || profile?.posts || [];
-    const mapped = posts
-      .map(p => ({ src: p.displayUrl||p.imageUrl||'', caption: p.caption||'', likes: p.likesCount||0, url: p.url||IG_URL }))
-      .filter(p => p.src);
-    if (mapped.length) { galleryItems = mapped; renderGrid(container, mapped, true); return; }
-  } catch (_) {}
-
-  // Both failed: show beautiful branded placeholder cards
-  showPlaceholders(container);
-}
-
-// ============ LIGHTBOX ============
-const lightbox = document.getElementById('lightbox');
-const lbImg    = document.getElementById('lightbox-img');
-const lbCap    = document.getElementById('lightbox-caption');
-const lbClose  = document.getElementById('lightbox-close');
-const lbPrev   = document.getElementById('lightbox-prev');
-const lbNext   = document.getElementById('lightbox-next');
-
-function openLightbox(idx) {
-  if (!galleryItems.length) return;
-  lightboxIdx = idx; showLightboxItem();
-  lightbox.classList.add('open');
-  document.body.style.overflow = 'hidden';
-  lbClose.focus();
-}
-function closeLightbox() { lightbox.classList.remove('open'); document.body.style.overflow = ''; }
-function showLightboxItem() {
-  const item = galleryItems[lightboxIdx]; if (!item) return;
-  lbImg.src = item.src; lbImg.alt = item.caption||'';
-  lbCap.textContent = item.caption ? item.caption.replace(/#\w+/g,'').trim().slice(0,200) : '';
-}
-
-lbClose.addEventListener('click', closeLightbox);
-lbPrev.addEventListener('click',  () => { lightboxIdx = (lightboxIdx - 1 + galleryItems.length) % galleryItems.length; showLightboxItem(); });
-lbNext.addEventListener('click',  () => { lightboxIdx = (lightboxIdx + 1) % galleryItems.length; showLightboxItem(); });
-lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
-document.addEventListener('keydown', e => {
-  if (!lightbox.classList.contains('open')) return;
-  if (e.key === 'Escape')      closeLightbox();
-  if (e.key === 'ArrowLeft')  { lightboxIdx = (lightboxIdx-1+galleryItems.length)%galleryItems.length; showLightboxItem(); }
-  if (e.key === 'ArrowRight') { lightboxIdx = (lightboxIdx+1)%galleryItems.length; showLightboxItem(); }
-});
-
-// ============ GO ============
-loadInstagramPhotos();
+const rObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vis'); rObs.unobserve(e.target); } });
+}, {threshold:.08, rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.rv').forEach(el => rObs.observe(el));
 </script>
 </body>
 </html>
